@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fd3b69b2f84d03325a2b79e107a2fac",
+    "content-hash": "0a32a039b0b45160a62d16c9a059c1c1",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -718,6 +718,41 @@
                 "source": "https://github.com/colinmollenhour/php-redis-session-abstract/tree/v1.5.5"
             },
             "time": "2024-02-03T06:04:45+00:00"
+        },
+        {
+            "name": "community-engineering/language-de_de",
+            "version": "0.0.59",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magento-l10n/language-de_DE.git",
+                "reference": "cda6030dd8514466a3437e7f5ad834a7d6e5322e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magento-l10n/language-de_DE/zipball/cda6030dd8514466a3437e7f5ad834a7d6e5322e",
+                "reference": "cda6030dd8514466a3437e7f5ad834a7d6e5322e",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "*"
+            },
+            "type": "magento2-language",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "de_DE language package.",
+            "support": {
+                "issues": "https://github.com/magento-l10n/language-de_DE/issues",
+                "source": "https://github.com/magento-l10n/language-de_DE/tree/v0.0.59"
+            },
+            "time": "2024-02-03T16:03:11+00:00"
         },
         {
             "name": "composer/ca-bundle",
