@@ -1,0 +1,133 @@
+/**
+ * @author Atwix Team
+ * @copyright Copyright (c) Atwix (https://www.atwix.com/)
+ */
+
+//
+//  Common
+//  _____________________________________________
+& when (@media-common = true) {
+	.home-featured-products {
+		.block-title {
+			text-align: center;
+
+			&.title {
+				.lib-font-size(40);
+
+				strong {
+					font-weight: @font-weight__regular;
+				}
+			}
+
+			&.sub-title {
+				.lib-font-size(20);
+				.lib-css(color, fade(@text-color__main, 50%));
+
+				font-weight: @font-weight__light;
+			}
+		}
+
+		&__list {
+			.lib-list-reset-styles();
+			.lib-vendor-prefix-display();
+			.lib-vendor-prefix-flex-wrap(wrap);
+
+			gap: 20px;
+			justify-content: center;
+			margin-top: 20px;
+
+			.product-details {
+				.lib-vendor-prefix-display();
+				.lib-vendor-prefix-flex-direction(column);
+				.lib-vendor-prefix-flex-wrap(wrap);
+				.lib-vendor-box-align(center);
+				.lib-vendor-prefix-flex-grow(1);
+
+				gap: 10px;
+				padding-bottom: 20px;
+			}
+
+			.store-en & {
+				li {
+					&:hover {
+						background: @color-gold;
+					}
+				}
+			}
+
+			.store-de & {
+				li {
+					&:hover {
+						background: @color-gray95;
+					}
+				}
+			}
+
+			li {
+				border-radius: 10px;
+
+				&:hover {
+					.product-details {
+						color: @color-white;
+					}
+
+					a {
+						.lib-link (
+							@_link-color: @color-white,
+							@_link-color-visited: @color-white,
+							@_link-text-decoration-visited: none,
+							@_link-color-hover: @color-white,
+							@_link-text-decoration-hover: none,
+							@_link-color-active: @color-white,
+							@_link-text-decoration-active: none
+						);
+					}
+
+					.tocart {
+						&.custom {
+							.lib-css(box-shadow, 0 2px 8px 0px rgba(0,0,0,0.4), 1);
+						}
+					}
+				}
+			}
+		}
+
+		.action {
+			&.tocart.custom {
+				text-transform: uppercase;
+			}
+		}
+
+		.product-name {
+			.lib-font-size(20);
+			.lib-vendor-prefix-flex-grow(1);
+			.lib-vendor-prefix-display();
+			.lib-vendor-prefix-flex-direction(column);
+
+
+			a {
+				.lib-link (
+					@_link-color: @product-name-link,
+					@_link-color-visited: @product-name-link,
+					@_link-text-decoration-visited: none,
+					@_link-color-hover: @product-name-link,
+					@_link-text-decoration-hover: none,
+					@_link-color-active: @product-name-link,
+					@_link-text-decoration-active: none
+				);
+			}
+		}
+
+		.product-description {
+			.lib-vendor-prefix-flex-grow(0);
+		}
+	}
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	// your code
+}

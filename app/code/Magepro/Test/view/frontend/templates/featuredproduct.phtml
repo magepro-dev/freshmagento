@@ -1,0 +1,66 @@
+<?php
+/**
+ * @author Atwix Team
+ * @copyright Copyright (c) Atwix (https://www.atwix.com/)
+ */
+
+/**
+ * @var $block \Magepro\Test\Block\Featuredproduct
+ * @var $escaper \Magento\Framework\Escaper
+ */
+?>
+<?php $products = $block->getProductList(); ?>
+
+<?php if (count($products) > 0): ?>
+    <div class="home-featured-products">
+        <div class="block-title title">
+            <strong id="block-featured-heading" role="heading"
+                    aria-level="2"><?= $block->escapeHtml(__('Features')) ?></strong>
+        </div>
+        <div class="block-title sub-title">
+            <span><?= $block->escapeHtml(__('Here’s what’s trending on B&O right now')) ?></span>
+        </div>
+        <ul class="home-featured-products__list">
+            <?php foreach ($products as $product): ?>
+                <li>
+                    <a href="<?= $escaper->escapeUrl($product['url']) ?>">
+                        <img src="<?= $escaper->escapeHtmlAttr($product['image']) ?>"
+                             alt="<?= $escaper->escapeHtml(__($product['name'])) ?>">
+                    </a>
+                    <div class="product-details">
+                        <div class="product-name">
+                            <a href="<?= $escaper->escapeUrl($product['url']) ?>">
+                                <?= $escaper->escapeHtml(__($product['name'])) ?>
+                            </a>
+                        </div>
+                        <div class="product-description"><?= $product['description'] ?></div>
+
+                        <?= $product['price'] ?>
+
+                        <form data-role="tocart-form__custom"
+                              action="<?= $escaper->escapeUrl($product['postParams']['action']) ?>"
+                              data-product-sku="<?= $escaper->escapeHtml($product['sku']) ?>"
+                              method="post">
+                            <input type="hidden" name="product" value="<?= $escaper->escapeHtmlAttr($product['postParams']['data']['product']) ?>" />
+                            <input type="hidden" name="form_key" value="<?php echo $block->getFormKey(); ?>" />
+                            <button type="submit" class="action tocart primary custom">
+                                <?= $escaper->escapeHtml(__('Add to Cart')) ?>
+                            </button>
+                        </form>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=tocart-form__custom]": {
+            "catalogAddToCart": {
+                "product_sku": "<?= $escaper->escapeJs($product['sku']); ?>"
+            }
+        }
+    }
+</script>
+

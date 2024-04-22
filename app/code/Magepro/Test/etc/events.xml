@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="layout_render_before">
+        <observer name="layout_render_before_observer"
+                  instance="Magepro\Test\Observer\AddBodyClassObserver"/>
+    </event>
+    <event name="customer_save_before">
+        <observer name="save_hobbies_attribute_observer"
+                  instance="Magepro\Test\Observer\SaveHobbiesAttributeObserver"/>
+    </event>
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="save_purpose_to_order_observer"
+                  instance="Magepro\Test\Observer\SavePurposeToOrderObserver"/>
+    </event>
+</config>

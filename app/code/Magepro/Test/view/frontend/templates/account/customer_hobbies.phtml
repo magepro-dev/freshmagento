@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @var $block Magento\Customer\Block\Form\Edit
+ * @var
+ */
+
+$hobbiesAttr = $block->getCustomer()->getCustomAttribute('hobbies');
+$customerCustomAttr = $hobbiesAttr ? $hobbiesAttr->getValue() : null;
+?>
+<div class="field hobbies">
+    <label for="hobbies" class="label"><span><?php /* @escapeNotVerified */ echo __('Hobbies') ?></span></label>
+    <div class="control">
+        <input type="text" name="hobbies" id="hobbies" title="hobbies" value="<?=$block->escapeHtmlAttr($customerCustomAttr);?>" class="input-text" type="text" />
+    </div>
+</div>
