@@ -1,0 +1,21 @@
+<?php /** @var $block Magepro\Test\Block\Adminhtml\Attributes */ ?>
+
+<?php $order = $block->getOrder(); ?>
+<?php if ($order) : ?>
+    <section class="admin__page-section order-additional-information">
+        <div class="admin__page-section-title">
+            <strong class="title"><?php echo /* @escapeNotVerified */ __('Purpose Information'); ?></strong>
+        </div>
+        <div id="<?php echo $block->getHtmlId() ?>"
+             class="admin__page-section-content order-additional-information-container">
+            <div class="admin__page-section-item order-information">
+                <div class="admin__page-section-item-content">
+                    <div class="admin__page-section-item-title">
+                        <span class="title">Purpose</span>
+                    </div>
+                    <div class="order-purpose__content"><?php echo $order->getPurpose(); ?></div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
